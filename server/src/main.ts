@@ -15,7 +15,8 @@ type ProtocolClient = TcpClient // TODO cleanup
 export class Main {
 	server = new TcpServer(this)
 
-	async handleClientConnected(client: ProtocolClient) {}
+	//Cannot be async, as it's called from a constructor which cannot be async
+	handleClientConnected(client: ProtocolClient) {}
 
 	async handleClientAuthenticated(client: ProtocolClient) {
 		if (!client.uuid) throw new Error('Client not authenticated')
