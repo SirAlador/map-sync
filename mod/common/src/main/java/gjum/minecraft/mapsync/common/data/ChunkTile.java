@@ -77,4 +77,8 @@ public record ChunkTile(
 			return new byte[]{};
 		}
 	}
+
+	public BlockColumn getBlockColumn(int x, int z) {
+		return this.columns[z * 16 + x];
+	}
 }

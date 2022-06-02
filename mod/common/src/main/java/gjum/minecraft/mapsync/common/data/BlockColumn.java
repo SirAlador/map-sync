@@ -11,6 +11,8 @@ import static gjum.minecraft.mapsync.common.Utils.getBiomeRegistry;
 public record BlockColumn(
 		Biome biome,
 		int light,
+
+		//Stored as vectors along the X axis. Index 0 is (0,0), index 16 is (0,1)
 		List<BlockInfo> layers
 ) {
 	public void write(ByteBuf buf) {
