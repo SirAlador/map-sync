@@ -56,9 +56,9 @@ public class RenderQueue {
 					return; // world closed; all queued chunks can't be rendered
 				}
 
-				if (!JourneyMapHelper.isJourneyMapNotAvailable && !JourneyMapHelper.isMapping()
-						|| !VoxelMapHelper.isVoxelMapNotAvailable && !VoxelMapHelper.isMapping()
-						|| XaerosMapHelper.getIsEnabled() && !XaerosMapHelper.isMapping()
+				if ((!JourneyMapHelper.isJourneyMapNotAvailable && !JourneyMapHelper.isMapping())
+						|| (!VoxelMapHelper.isVoxelMapNotAvailable && !VoxelMapHelper.isMapping())
+						|| (XaerosMapHelper.getIsEnabled() && !XaerosMapHelper.isMapping())
 				) {
 					debugLog("render is waiting til map mod is ready");
 					Thread.sleep(1000);

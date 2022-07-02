@@ -22,11 +22,11 @@ public class XaerosMapHelper {
 		return XaerosMapHelperReal.is_mapping();
 	}
 
-	public static boolean updateWithChunkTile(ChunkTile chunkTile) {
+	public static boolean updateWithChunkTile(ChunkTile chunkTile) throws InterruptedException {
 		if (!is_enabled) return false;
 		if (!isMapping()) {
 			return false;
 		}
-		return XaerosMapHelperReal.update_with_chunk_tile(chunkTile);
+		return XaerosMapHelperReal.update_with_chunk(chunkTile);
 	}
 }
